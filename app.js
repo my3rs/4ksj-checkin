@@ -347,10 +347,6 @@ function sendTelegramMsg(status, info) {
         })
 }
 
-function escapeMarkdown(text) {
-    return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&');
-}
-
 async function start() {
     let status = "未配置";
     let message = "未配置";
