@@ -272,6 +272,9 @@ function pushNotice(status, message) {
         console.log("通过bark推送消息");
         sendBarkMsg(status, message);
     }
+    console.log("debug")
+    console.log(telegramToken)
+    console.log(telegramID)
     if (telegramToken) {
         console.log("通过Telegram推送消息");
         sendTelegramMsg(status, message);
