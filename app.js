@@ -339,12 +339,16 @@ function sendTelegramMsg(status, info) {
     axios
         .post("https://api.telegram.org/bot" + telegramToken + "/sendMessage", {
             'chat_id': telegramID,
-            'text': '*'+ status + '*\n' + info,
+            'text': '*'+ escapeMarkdown(status) + '*\\n' + escapeMarkdown(info),
             'parse_mode': 'MarkdownV2'
         })
         .catch((e)=>{
             console.log(e);
         })
+}
+
+function escapeMarkdown(text) {
+    return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&');
 }
 
 async function start() {
