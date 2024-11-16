@@ -8,8 +8,8 @@ axios.defaults.retry = 3; //设置全局请求次数
 axios.defaults.retryDelay = 1000;//设置全局请求间隙
 
 // 填写Telegram的Bot API和Chat ID
-const telegramToken = process.env["TELEGRAM_TOKEN"]
-const telegramID = process.env["TELEGRAM_ID"]
+const telegramToken = process.env.TELEGRAM_TOKEN
+const telegramID = process.env.TELEGRAM_ID
 
 // 填写server酱sckey,不开启server酱则不用填
 const sckey = process.env["SCKEY"];
