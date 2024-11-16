@@ -339,8 +339,8 @@ function sendTelegramMsg(status, info) {
     axios
         .post("https://api.telegram.org/bot" + telegramToken + "/sendMessage", {
             'chat_id': telegramID,
-            'text': '*'+ escapeMarkdown(status) + '*\\n' + escapeMarkdown(info),
-            'parse_mode': 'MarkdownV2'
+            'text': '<b>' + status + '</b>\n' + info,
+            'parse_mode': 'HTML'
         })
         .catch((e)=>{
             console.log(e);

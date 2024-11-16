@@ -31,10 +31,10 @@ jobs:
     - name: 安装依赖包
       run: npm install
 
-    - name: 调试
-      run: |
-        echo "TELEGRAM_TOKEN exists: ${{ secrets.TELEGRAM_TOKEN != '' }}"
-        echo "TELEGRAM_ID exists: ${{ secrets.TELEGRAM_ID != '' }}"
+    # - name: 调试
+    #   run: |
+    #     echo "TELEGRAM_TOKEN exists: ${{ secrets.TELEGRAM_TOKEN != '' }}"
+    #     echo "TELEGRAM_ID exists: ${{ secrets.TELEGRAM_ID != '' }}"
 
     - name: 运行
       run: node app.js
