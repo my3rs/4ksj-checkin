@@ -37,6 +37,16 @@ let cookie = process.env["COOKIE"];
 // 填入4KSJ账号对应Cookie
 let cookieSJ = process.env["SJCOOKIE"];
 
+// 更新 cookie 中 will_timelogout_XXXXXX 的值为当前时间戳加一天
+function updateCookieLogoutTimePlusOneDay(cookieStr) {
+    const oneDayInSeconds = 24 * 60 * 60;
+    const timestampPlusOneDay = Math.floor(Date.now() / 1000) + oneDayInSeconds;
+    return cookieStr.replace(/(will_timelogout_\d+=)\d+/, `$1${timestampPlusOneDay}`);
+}
+
+cookieSJ = updateCookieLogoutTimePlusOneDay(cookieSJ);
+
+
 
 const SJUrl =
     "https://www.4ksj.com/";
